@@ -37,8 +37,8 @@ def print_products(products):
         print(p[0], '的價格是', p[1])
 
 # 寫入檔案
-def write_file(products):
-    with open('products.csv', 'w', encoding='utf-8') as f:
+def write_file(filename,products):
+    with open(filename, 'w', encoding='utf-8') as f:
         f.write('商品,價格\n')
         for p in products:
             f.write(str(p[0]) + ',' + str(p[1]) + '\n')
@@ -46,4 +46,4 @@ def write_file(products):
 products = read_file('products.csv')
 products = user_input(products)
 print_products(products)
-write_file(products)
+write_file('products.csv',products)
